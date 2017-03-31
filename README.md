@@ -17,8 +17,8 @@ You will need the following things properly installed on your computer.
 
 * `git clone <repository-url>` this repository
 * `cd ethereum-play-web3js`
-* `npm install`
-* `bower install`
+* `npm install -d `
+* `bower install -d `
 
 ## Running / Development
 

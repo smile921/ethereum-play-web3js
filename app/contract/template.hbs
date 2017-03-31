@@ -1,0 +1,13 @@
+
+<h1>Contract </h1>
+<hr>
+<div id="code"></div> 
+    <div id="status"></div>
+    <div id='create'>
+        <button type="button" onClick="createExampleContract();">create example contract</button>
+    </div>
+    <div id='call' style='visibility: hidden;'>
+        <input type="number" id="value" onkeyup='callExampleContract()'></input>
+    </div>
+    <div id="result"></div>
+{{outlet}}

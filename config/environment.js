@@ -3,6 +3,8 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ethereum-play-web3js',
+	//web3Provider: 'http://localhost:8545',
+	web3Provider: 'http://10.88.1.121:8545',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
