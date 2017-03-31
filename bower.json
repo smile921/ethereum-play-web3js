@@ -1,5 +1,6 @@
 {
   "name": "ethereum-play-web3js",
   "dependencies": {
+    "web3": "^0.18.4"
   }
 }
