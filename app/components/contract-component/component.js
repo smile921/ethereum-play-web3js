@@ -27,7 +27,7 @@ export default Ember.Component.extend({
         let webInstance = this.get('web3.web3Instance');
         console.log(web3);
         // console.log(webInstance);
-        debugger;
+        // debugger;
         let compiled = webInstance.eth.compile.solidity(source);
         let code =  get(this,'code');
         let abi = get(this,'abi');
@@ -53,7 +53,7 @@ export default Ember.Component.extend({
             // hide create button
             // document.getElementById('create').style.visibility = 'hidden'; 
             document.getElementById('code').innerText = code;
-            debugger 
+            // debugger 
             // let's assume that coinbase is our account
             webInstance.eth.defaultAccount = webInstance.eth.coinbase;
             let flag = webInstance.personal.unlockAccount(webInstance.eth.coinbase,'smile921',999);
@@ -63,11 +63,11 @@ export default Ember.Component.extend({
             webInstance.eth.contract(abi).new({data: code}, function (err, contract) {
                 if(err) {
                     console.error(err);
-                    debugger
+                    // debugger
                     return;
                 // callback fires twice, we only want the second call when the contract is deployed
                 } else if(contract.address){
-                    debugger
+                    // debugger
                     myContract = contract;
                     set(_component_this,'myContract',myContract);
                     console.log('address: ' + myContract.address);
