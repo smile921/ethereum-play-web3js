@@ -1,15 +1,9 @@
 
 <h1>Contract </h1>
 <hr>
-<div id="code"></div> 
-    <div id="status"></div>
-    <div id='create'>
-        <button type="button"  onclick={{action "createExampleContract"}} >create example contract</button>
 
-    </div>
-    <div id='call' style='visibility: hidden;'>
-    	
-        <input type="number" id="value" onkeyup={{action "callExampleContract"}} /> 
-    </div>
-    <div id="result"></div>
+ {{#contract-component}}
+
+ {{/contract-component}}
+<hr>
 {{outlet}}

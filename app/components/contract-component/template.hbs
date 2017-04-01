@@ -1,1 +1,15 @@
-{{yield}}
+<div id="code"></div> 
+    <div id="status"></div>
+
+    <div id='create'>
+        <button type="button"  onclick={{action "createExampleContract"}} >create example contract</button>
+
+    </div>
+    {{yield}}
+    <div id='call' style='visibility: hidden;'>
+        
+        <input type="number" id="value" onkeyup={{action "callExampleContract"}} /> 
+    </div>
+    <div id="result"></div>
+
+
