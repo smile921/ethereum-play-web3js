@@ -6,6 +6,12 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import(`${app.bowerDirectory}/materialize/dist/js/materialize.min.js`,{
+    outputFile:'assets/materialize.js'
+  });
+  app.import(`${app.bowerDirectory}/materialize/dist/css/materialize.css`,{
+      outputFile:'assets/materialize.css'
+    });
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
