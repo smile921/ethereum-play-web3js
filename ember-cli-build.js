@@ -12,6 +12,9 @@ module.exports = function(defaults) {
   app.import(`${app.bowerDirectory}/materialize/dist/css/materialize.css`,{
       outputFile:'assets/materialize.css'
     });
+  app.import(`${app.bowerDirectory}/jquery/dist/jquery.min.js`,{
+      outputFile:'assets/jquery.js'
+    });
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //
