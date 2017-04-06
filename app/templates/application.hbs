@@ -2,6 +2,34 @@
 {{!--  welcome-page --}}
 {{!-- Feel free to remove this! --}}
 
+<div class="red">    
+ <nav class="topHeader">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">Logo</a>
+      <ul   class="left ">
+        <li> {{#link-to 'index'}}home {{/link-to}} </li>
+        <li> {{#link-to 'contract'}}contract {{/link-to}} </li>        
+        <li>{{#link-to 'balance'}}balance {{/link-to}}</li>
+      </ul>
+    </div>
+  </nav>        
+</div>
 <hr>
-<h1> Try to play with web3js and ethereum </h1>
-{{outlet}}
+<div class="container">
+    <div class="side-nav  red lighten-1"> 
+        <div class="logo">
+            <span>logo</span>
+        </div>
+        <ul class="center ">
+         
+        <li class="row leftbar"> {{#link-to 'index'}}home {{/link-to}} </li>
+        <li class="row leftbar"> {{#link-to 'contract'}}contract {{/link-to}} </li>        
+        <li class="row leftbar"> {{#link-to 'balance'}}balance {{/link-to}}</li>
+      </ul>
+    </div>
+    <div>       
+        {{outlet}}
+    </div>
+</div>
+
+

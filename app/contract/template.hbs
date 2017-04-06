@@ -1,6 +1,18 @@
 
-<h1>Contract </h1>
+<h3>Contract 智能合约 </h3>
 <hr>
+<div class="row">
+        <div class="input-field col s12">
+          <textarea id="contractSource"  class="materialize-textarea">{{model.source}}</textarea>
+          <label for="textarea1">合约代码</label>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+          <input id="contractName" placeholder="Placeholder" value={{model.contractName}}  type="text" class="validate">
+          <label for="first_name">合约名称</label>
+        </div>
+</div>
 
  {{#contract-component}}
 

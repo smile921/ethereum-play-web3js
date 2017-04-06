@@ -1,9 +1,32 @@
+<div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action "compileContract" 'model'}}><i class="material-icons left">C </i>编译合约</a>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+          <textarea id="iabi" class="materialize-textarea">{{abi}}</textarea>
+          <label for="textarea1">编译后的ABI代码 </label>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+          <textarea id="ibin" class="materialize-textarea">{{bin}}</textarea>
+          <label for="textarea1">编译后的BIN </label>
+        </div>
+</div>
+ 
+<div>
+    <div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action "createExampleContract"  }}><i class="material-icons left">D </i>部署合约</a>
+        </div>
+</div>
+</div>
 <div id="code"></div> 
     <div id="status"></div>
 
     <div id='create'>
-        <button type="button"  onclick={{action "createExampleContract"}} >create example contract</button>
-
     </div>
     {{yield}}
     <div id='call' style='visibility: hidden;'>

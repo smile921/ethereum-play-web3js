@@ -14,10 +14,13 @@ export default Ember.Component.extend({
  actions:{
     watchBalance: function() {
         // debugger;
+        let tmp =  get(this,'web3.web3Instance');
+        set(this,'tmp',tmp);
+
         let web3 = this.get('web3.web3Instance');
         let coinbase = web3.eth.coinbase;
         console.log(coinbase);
-        
+         
         let originalBalance = web3.eth.getBalance(coinbase).toNumber();
         document.getElementById('coinbase').innerText = 'coinbase: ' + coinbase;
         document.getElementById('original').innerText = ' original balance: ' + originalBalance + '    watching...';
