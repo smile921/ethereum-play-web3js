@@ -10,7 +10,14 @@ export default Ember.Component.extend({
     // var Web3 = require('web3');
     // var web3 = new Web3();
     // web3.setProvider(new web3.providers.HttpProvider());
-
+ didInsertElement:function () {
+    this._super(...arguments);
+    this.errors = []; 
+    // debugger
+    let web3 = this.get('web3.web3Instance');
+    let coinbase = web3.eth.coinbase;
+    Ember.$('#walletAddr').val(coinbase);
+ },
  actions:{
     watchBalance: function() {
         // debugger;
@@ -18,17 +25,17 @@ export default Ember.Component.extend({
         set(this,'tmp',tmp);
 
         let web3 = this.get('web3.web3Instance');
-        let coinbase = web3.eth.coinbase;
+        let coinbase = Ember.$('#walletAddr').val();
         console.log(coinbase);
          
         let originalBalance = web3.eth.getBalance(coinbase).toNumber();
-        document.getElementById('coinbase').innerText = 'coinbase: ' + coinbase;
-        document.getElementById('original').innerText = ' original balance: ' + originalBalance + '    watching...';
+        Ember.$('#coinbase').val(coinbase);
+        Ember.$('#original').val(' : ' + originalBalance +'watching'); 
 
         web3.eth.filter('latest').watch(function() {
             var currentBalance = web3.eth.getBalance(coinbase).toNumber();
-            document.getElementById("current").innerText = 'current: ' + currentBalance;
-            document.getElementById("diff").innerText = 'diff:    ' + (currentBalance - originalBalance);
+            Ember.$('#current').val(' : ' + currentBalance);
+            Ember.$('#diff').val(' : ' + (currentBalance - originalBalance));              
         });
     }
  }

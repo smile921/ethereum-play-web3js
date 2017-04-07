@@ -23,16 +23,22 @@
         </div>
 </div>
 </div>
-<div id="code"></div> 
+<div class="row" ><p id="dmsg" class="flow-text">响应消息</p>
+</div> 
     <div id="status"></div>
 
     <div id='create'>
     </div>
     {{yield}}
-    <div id='call' style='visibility: hidden;'>
-        
-        <input type="number" id="value" onkeyup={{action "callExampleContract"}} /> 
+    <div id='call' class="row" >        
+        <input type="number" id="contractParam" class="callInput" placeholder="输入要测试的参数 " />         
+        <div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action "callExampleContract"  }}><i class="material-icons left">D </i>调用合约测试</a>
+        </div>
+</div>
     </div>
-    <div id="result"></div>
+    <div class="row" ><p id="result" class="flow-text">合约调用结果</p></div>
+
 
 

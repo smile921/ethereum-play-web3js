@@ -1,9 +1,18 @@
-.topHeader{
-    margin-left:350px;
-}
+li.hnav a{
+    font-size: 28px;
+} 
 .leftbar{
     background: #f5f5d5;
 }
 .logo{
     height: 260px;
+}
+
+li.leftbar a {     
+    font-size: 28px;
+}
+
+.callInput{
+    border: 1px solid #9e9e9e !important;
+     
 }

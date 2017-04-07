@@ -1,10 +1,28 @@
-<button type="button" onClick={{ action "watchBalance" }}>watch balance</button>
-    <div>
-        <h1> balance h1 </h1>
-        <hr>
-    </div>
-    <div id="coinbase"></div>
-    <div id="original"></div>
-    <div id="current"></div>
-    <div id="diff"></div>
-{{yield}}
+ 
+<div class="row">
+      <div class="input-field col s12">
+          <textarea id="walletAddr" class="materialize-textarea" placeholder="钱包地址"> </textarea>
+          <label for="textarea1">钱包地址 </label>
+        </div>
+        <div class="input-field col s12">
+
+            <a class="waves-effect waves-light btn-large" onclick={{action "watchBalance" 'model'}}><i class="material-icons left">Watch </i>watch账户coin变动</a>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+          <p  class="flow-text">钱包地址
+              <span id="coinbase"></span> 
+          </p>
+          <p   class="flow-text">原始值
+          <span id="original"></span>
+          </p>
+          <p   class="flow-text">当前值
+          <span id="current"></span>
+          </p>
+          <p  class="flow-text">变动
+          <span id="diff"></span>
+          </p>
+        </div>
+</div>
+ 
