@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('namereg');
   this.route('balance');
   this.route('contract');
+  this.route('block');
 });
 
 export default Router;

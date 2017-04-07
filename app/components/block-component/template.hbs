@@ -1,0 +1,79 @@
+<hr>
+<h5>指定 Block 区块信息 </h5>
+<div class="row">
+        <div class="input-field col s12">
+          <textarea id="inumb" class="materialize-textarea" placeholder="区块数或者Hash值,earliest 创世区块, latest 最新区块 或者 pending 待提交区块">{{inumb}}</textarea>          
+          <label for="textarea1">区块数或者Hash值,"earliest" 创世区块, "latest"最新区块 或者 "pending" 待提交区块 </label>
+        </div>
+</div>
+ <div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action "showBlockInfo" 'model'}}><i class="material-icons left">C </i>查看区块信息</a>
+        </div>
+</div>
+<div class="row">
+        <div class="input-field col s12">          
+          <label for="textarea1">区块信息 </label>
+        </div>
+      <div class="collection">
+        <a href="#!" class="collection-item">难度值: {{blockInfo.difficulty}}</a>
+        <a href="#!" class="collection-item">瓦斯限制: {{blockInfo.gasLimit}}</a>
+        <a href="#!" class="collection-item">哈希值: {{blockInfo.hash}}</a>
+        <a href="#!" class="collection-item">父哈希值: {{blockInfo.parentHash}}</a>
+        <a href="#!" class="collection-item">矿工: {{blockInfo.miner}}</a>
+        <a href="#!" class="collection-item">nonce值: {{blockInfo.nonce}}</a>
+        <a href="#!" class="collection-item">时间戳: {{blockInfo.timestamp}}</a>
+        <a href="#!" class="collection-item">区块大小: {{blockInfo.size}} 字节</a>
+        <a href="#!" class="collection-item">总难度: {{blockInfo.totalDifficulty}}</a>
+        <a href="#!" class="collection-item">交易: {{blockInfo.transactions}}</a>
+        <a href="#!" class="collection-item">叔区块: {{blockInfo.uncles}}</a>
+        <a href="#!" class="collection-item">extraData: {{blockInfo.extraData}}</a>
+      </div>
+      <div class="input-field col s12">
+          <label  >区块JSON信息 </label>
+          <br>
+          <blockquote>
+          </blockquote>
+
+        <p class="flow-text">
+            {{blockInfoJson}}     
+        </p>
+             
+          
+          
+        </div>
+</div>
+
+
+
+
+
+{{!-- 
+
+  高度    块龄  交易  叔区块 矿工  瓦斯限制    难度值 哈希率 奖励
+          {
+    "difficulty": "652562",
+    "extraData": "0xd783010509846765746887676f312e372e33856c696e7578",
+    "gasLimit": 4712388,
+    "gasUsed": 0,
+    "hash": "0x26b0ef0e957a3c439f99927e3756ffd7ed0c3afe38f74353abcd9fcdf85802f0",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "miner": "0xa50f4f3d0b5f9808c418d51b1017b7451220a737",
+    "mixHash": "0xeec330054da6a1909573a251f63fc0e3272acb3bef99eedcb59026d4a3e8a331",
+    "nonce": "0x161a4055c63d2ff5",
+    "number": 11040,
+    "parentHash": "0xce03bebf970446c7ffae6d781606cbadb1632d91b946de12d64532f414673936",
+    "receiptsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+    "sha3Uncles": "0x11cea3dd0778790453599b0b92091a70788e4676c3193d47b54220aba0d7e2b0",
+    "size": 1071,
+    "stateRoot": "0x16286c4fb85c120c18e6f4fa7dd1df891aad69f2a6cac7aef4b48aeb50eb08c7",
+    "timestamp": 1491039562,
+    "totalDifficulty": "5413692263",
+    "transactions": [],
+    "transactionsRoot": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421",
+    "uncles": [
+        "0x708219c07547c1ad14be386541cc4bcd02f87fd81a6fd1f65c03fc4d04ae7703"
+    ]
+}
+
+ --}}

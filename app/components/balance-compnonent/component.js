@@ -5,8 +5,12 @@ import set from 'ember-metal/set';
 import get from 'ember-metal/get';
 
 export default Ember.Component.extend({
-
+  
  web3 : Ember.inject.service(),
+ version : Ember.computed(function() {
+    // web3.web3Instance.version.api;
+    return web3;
+ }),
     // var Web3 = require('web3');
     // var web3 = new Web3();
     // web3.setProvider(new web3.providers.HttpProvider());
@@ -14,6 +18,7 @@ export default Ember.Component.extend({
     this._super(...arguments);
     this.errors = []; 
     // debugger
+    // this.get('web3');
     let web3 = this.get('web3.web3Instance');
     let coinbase = web3.eth.coinbase;
     Ember.$('#walletAddr').val(coinbase);
