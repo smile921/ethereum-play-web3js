@@ -50,3 +50,6 @@ Specify what it takes to deploy your app.
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+* [web3js api](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+* [materializecss](http://materializecss.com/)
+* [ember guide](https://guides.emberjs.com/v2.12.0/)

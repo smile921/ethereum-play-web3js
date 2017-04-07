@@ -22,7 +22,12 @@ li.hnav a{
 .logo{
     height: 260px;
 }
-
+.myred {
+    background: linear-gradient(to bottom ,#ff7043,#ff7043);
+}
+.snav-radis{
+    background: linear-gradient(to bottom ,#ff7043,#ff7043);
+}
 li.leftbar a {     
     font-size: 28px;
 }
