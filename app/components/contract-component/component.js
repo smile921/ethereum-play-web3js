@@ -44,7 +44,7 @@ export default Ember.Component.extend({
 
     actions:{
         // initContract: 
-        compileContract:function( args ) {
+        compileContract:function( ) {
              
             let source = Ember.$('#contractSource').val();
             let webInstance = this.get('web3.web3Instance');            
