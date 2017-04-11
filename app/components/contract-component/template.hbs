@@ -15,9 +15,19 @@
           <label for="textarea1">编译后的BIN </label>
         </div>
 </div>
- 
+ <hr>
 <div>
     <div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action "estimateGas"  }}><i class="material-icons left">Estimate </i>估算需要Gas</a>
+            <span class="flow-text" id="estimateGasId"> </span>
+        </div>
+        <div class="input-field col s12">
+          <input  id="addr" class="materialize-textarea" type="text" name="" value="{{deployData.addr}}" placeholder="from account addr"  >             
+        </div>
+        <div class="input-field col s12">
+          <input id="gas" class="materialize-textarea" type="text" name="" value="{{deployData.gas}}" placeholder="gasLimit"  >            
+        </div> 
         <div class="input-field col s12">
             <a class="waves-effect waves-light btn-large" onclick={{action "createExampleContract"  }}><i class="material-icons left">Deploy </i>部署合约</a>
         </div>

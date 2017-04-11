@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('balance');
   this.route('contract');
   this.route('block');
+  this.route('ballot');
 });
 
 export default Router;

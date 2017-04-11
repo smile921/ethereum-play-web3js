@@ -4,8 +4,10 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'ethereum-play-web3js',
     podModuePrefix:'ethereum-play-web3js/modules',
-	//web3Provider: 'http://localhost:8545',
-	web3Provider: 'http://10.88.1.166:8545',
+	  //web3Provider: 'http://localhost:8545',
+    web3UserPassword:'smile921',
+    web3AccountAddr:'',
+  	web3Provider: 'http://10.88.1.154:8545',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',

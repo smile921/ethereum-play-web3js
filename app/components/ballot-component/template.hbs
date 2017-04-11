@@ -1,0 +1,40 @@
+<div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action 'voters'}}  >
+            <i class="material-icons left">new Voters </i>查看候选人</a>
+        </div>
+        <blockquote>
+            ballotInstance.voters()
+        </blockquote> 
+        <blockquote>
+            cc.voters(ps[0],{from:ps[0]}) <br>
+            [1, false, "0x0000000000000000000000000000000000000000", 0]
+             <br>
+             cc.voters(ps[1],{from:ps[0]})<br>
+            [1, false, "0x0000000000000000000000000000000000000000", 0]
+
+        </blockquote>
+</div>
+<div class="row">
+        <div class="input-field col s12">
+            <a class="waves-effect waves-light btn-large" onclick={{action 'giveRightToVote'}}  >
+            <i class="material-icons left">new Voters </i>设置候选权限</a>
+        </div>
+        <br>
+        <blockquote> ballotInstance.giveRightToVote(voter,{from:'0xa50f4f3d0b5f9808c418d51b1017b7451220a737'});    
+        </blockquote>
+        
+        <blockquote>
+            note the from account must be unlocked first 
+        </blockquote> 
+</div>
+
+<div class="row">
+        <div class="input-field col s12">
+          <textarea id="voterAddr" class="materialize-textarea"> </textarea>
+          <label for="textarea1"> 投票者的地址 </label>
+        </div>
+</div>
+
+ 
+
