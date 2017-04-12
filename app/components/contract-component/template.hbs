@@ -1,17 +1,19 @@
 <div class="row">
         <div class="input-field col s12">
-            <a class="waves-effect waves-light btn-large" onclick={{action "compileContract" model}}><i class="material-icons left">Compile </i>编译合约</a>
+            <a class="waves-effect waves-light btn-large" 
+            onclick={{action "compileContract" contract }}>
+            <i class="material-icons left">Compile </i>编译合约</a>
         </div>
 </div>
 <div class="row">
         <div class="input-field col s12">
-          <textarea id="iabi" class="materialize-textarea">{{abi}}</textarea>
+          <textarea id="iabi" class="materialize-textarea">{{abistr}}</textarea>
           <label for="textarea1">编译后的ABI代码 </label>
         </div>
 </div>
 <div class="row">
         <div class="input-field col s12">
-          <textarea id="ibin" class="materialize-textarea">{{bin}}</textarea>
+          <textarea id="ibin" class="materialize-textarea">{{code}}</textarea>
           <label for="textarea1">编译后的BIN </label>
         </div>
 </div>
@@ -19,17 +21,22 @@
 <div>
     <div class="row">
         <div class="input-field col s12">
-            <a class="waves-effect waves-light btn-large" onclick={{action "estimateGas"  }}><i class="material-icons left">Estimate </i>估算需要Gas</a>
+            <a class="waves-effect waves-light btn-large" 
+            onclick={{action "estimateGas"}}>
+            <i class="material-icons left">Estimate </i>估算需要Gas</a>
             <span class="flow-text" id="estimateGasId"> </span>
         </div>
         <div class="input-field col s12">
           <input  id="addr" class="materialize-textarea" type="text" name="" value="{{deployData.addr}}" placeholder="from account addr"  >             
         </div>
         <div class="input-field col s12">
-          <input id="gas" class="materialize-textarea" type="text" name="" value="{{deployData.gas}}" placeholder="gasLimit"  >            
+          <input id="gas" class="materialize-textarea" type="text" name="" 
+          value="{{deployData.gas}}" placeholder="gasLimit"  >            
         </div> 
         <div class="input-field col s12">
-            <a class="waves-effect waves-light btn-large" onclick={{action "createExampleContract"  }}><i class="material-icons left">Deploy </i>部署合约</a>
+            <a class="waves-effect waves-light btn-large" 
+            onclick={{action "createExampleContract"  }}>
+            <i class="material-icons left">Deploy </i>部署合约</a>
         </div>
 </div>
 </div>
@@ -39,16 +46,21 @@
 
     <div id='create'>
     </div>
-    {{yield}}
+     
     <div id='call' class="row" >        
         <input type="number" id="contractParam" class="callInput" placeholder="输入要测试的参数 " />         
         <div class="row">
         <div class="input-field col s12">
-            <a class="waves-effect waves-light btn-large" onclick={{action "callExampleContract"  }}><i class="material-icons left">Call </i>调用合约测试</a>
+            <a class="waves-effect waves-light btn-large" 
+            onclick={{action "callExampleContract"  }}>
+            <i class="material-icons left">Call </i>调用合约测试</a>
         </div>
 </div>
     </div>
     <div class="row" ><p id="result" class="flow-text">合约调用结果</p></div>
 
-
+{{yield (hash
+    contract=contract
+    compileContract=(action "compileContract")
+)}}
 

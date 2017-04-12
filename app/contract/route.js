@@ -4,17 +4,18 @@ import Ember from 'ember';
 // import get from 'ember-metal/get';
 
 export default Ember.Route.extend({
-    contract:{source:"" +
+    contractVar:{ source:"" +
         "contract test {\n" +
         "   function multiply(uint a) constant returns(uint d) {\n" +
         "       return a * 7;\n" +
         "   }\n" +
         "}\n",
-        contractName:'test' 
+        contractName:'test',
+        id:1 
     },
 
     model(){
-        let contract = this.get('contract');
+        let contract = this.get('contractVar');
         return contract;
     }
 

@@ -4,10 +4,8 @@ import web3 from 'ember-web3/services/web3';
 import set from 'ember-metal/set';
 import get from 'ember-metal/get';
 
-export default Ember.Component.extend({
-    // ENV:{web3UserPassword:'smile921'},
-    web3: Ember.inject.service(),
-    
+export default Ember.Component.extend({ 
+    web3: Ember.inject.service(),    
     actions:{
         // initContract: 
         estimateGas:function(){
@@ -18,20 +16,36 @@ export default Ember.Component.extend({
             var gasPrice = webInstance.eth.gasPrice;
             var total = gasEstimate*gasPrice; 
             console.log('total: ' + webInstance.fromWei(total,'ether'));
-            Ember.$('#estimateGasId').val(webInstance.fromWei(total,'ether')); 
+            // Ember.$('#estimateGasId').val(webInstance.fromWei(total,'ether')); 
+            set(this,'deployData.gas', webInstance.fromWei(total,'ether'));
+
         },
-        compileContract:function(){            
-            let source = Ember.$('#contractSource').val();
-            set(this,'source',source);
-            let webInstance = this.get('web3.web3Instance');            
+        compileContract:function(model){ 
+            // debugger
+            let source = model.source;  
+            if(source === undefined){
+               source = Ember.$('#contractSource').val();
+            }
+            if(source === undefined){
+                console.log(' no source found ,nothing to compiled ');
+                return;
+            }
+            // console.log(model);
+            // set(this,'source',source);
+            let webInstance = get(this,'web3.web3Instance');            
             let compiled = webInstance.eth.compile.solidity(source);            
-            let contractName = Ember.$('#contractName').val();
+            let contractName = model.contractName;
+            if (contractName===undefined){
+                contractName = Ember.$('#contractName').val();
+            }
             let code = compiled["<stdin>:"+contractName].code;            
             let abi = compiled["<stdin>:"+contractName].info.abiDefinition; 
             set(this,'abi',abi);
+            set(this,'abistr',JSON.stringify(abi));
             set(this,'code',code);
-            Ember.$('#iabi').val(JSON.stringify(abi));
-            Ember.$('#ibin').val(code); 
+            set(this,'deployData.addr',addr:webInstance.eth.coinbase);
+            // Ember.$('#iabi').val(JSON.stringify(abi));
+            // Ember.$('#ibin').val(code); 
         },
         createExampleContract:function(){             
             let webInstance = this.get('web3.web3Instance');              
@@ -85,4 +99,4 @@ export default Ember.Component.extend({
             Ember.$('#result').val(res.toString(10));
         }
     }
-});
+}).reopenClass({positionalParams:['contract']});
