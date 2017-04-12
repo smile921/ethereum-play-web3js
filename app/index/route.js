@@ -4,6 +4,9 @@ import  {later}  from 'ember-runloop';
 import web3 from 'ember-web3/services/web3';
 export default Ember.Route.extend({
     web3: Ember.inject.service(),
+    clog:function(){
+        console.log(web3);
+    },
     model(){
         let web3 = this.get('web3.web3Instance');
         let promise = new RSVP.Promise( (resolve) => later( () => resolve(web3.version),2000),

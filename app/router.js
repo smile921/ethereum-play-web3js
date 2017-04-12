@@ -6,8 +6,7 @@ const Router = Ember.Router.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {
-  this.route('namereg');
+Router.map(function() {  
   this.route('balance');
   this.route('contract');
   this.route('block');

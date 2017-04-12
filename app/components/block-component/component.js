@@ -5,7 +5,10 @@ export default Ember.Component.extend({
     blockInfo:{},
     inumb:null,
     blockInfoJson:{},
-    web3:Ember.inject.service(),
+    web3:Ember.inject.service(), 
+    clog:function(){
+        console.log(web3);
+    },
     actions:{
         showBlockInfo:function() {
             let web3 =  this.get('web3.web3Instance');

@@ -6,6 +6,9 @@ export default Ember.Component.extend({
     ballotAddr:'0xc1c4334c9209246b5734e53c4014d5699c47f56c',
     ballotAddr2:'0x116395e7c3e4985bb930dc5c8c1b93e92c0ebd73',
     web3: Ember.inject.service(),
+    clog:function(){
+        console.log(web3);
+    },
     ballotIns:{},
     init:function(){
          // debugger
@@ -32,14 +35,14 @@ export default Ember.Component.extend({
         },
         callnewBallotVote:function(){             
             let ballotIns = get(this,'ballotIns');
-            debugger
+            // debugger
             ballotIns.Ballot(['smile921','frere921']);
             
         },
         giveRightToVote:function(){
             let voter = (Ember.$('#voterAddr').val());
             let ballotIns = get(this,'ballotIns');
-            debugger
+            // debugger
             let ret = ballotIns.giveRightToVote(voter,{from:'0xa50f4f3d0b5f9808c418d51b1017b7451220a737'});
             console.log(ret);
              

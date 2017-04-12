@@ -7,7 +7,9 @@ module.exports = function(environment) {
 	  //web3Provider: 'http://localhost:8545',
     web3UserPassword:'smile921',
     web3AccountAddr:'',
-  	web3Provider: 'http://10.88.1.154:8545',
+  	web3Provider: 'http://10.88.1.61:8545',
+    web3Provider3: 'http://112.64.159.162:10005',
+    web3Provider1: 'http://127.0.0.1:8545',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -36,6 +38,11 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
   }
 
+  // ENV.contentSecurityPolicy = {
+  //   // ... other stuff here
+  //   // 'connect-src': "'self' http://112.64.159.162:10005"
+  //   'connect-src': "'self' http://127.0.0.1:8545"
+  // }
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';

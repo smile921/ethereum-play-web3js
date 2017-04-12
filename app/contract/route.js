@@ -10,7 +10,7 @@ export default Ember.Route.extend({
         "       return a * 7;\n" +
         "   }\n" +
         "}\n",
-        contractName:'test'
+        contractName:'test' 
     },
 
     model(){

@@ -4,8 +4,12 @@ import web3 from 'ember-web3/services/web3';
 export default Ember.Route.extend({
 
     web3: Ember.inject.service(),
+    clog:function(){
+        console.log(web3);
+    },
     model(){
-        let web3 = this.get('web3.web3Instance');
+        let web3Obj = this.get('web3');
+        let web3 = web3Obj.web3Instance;
         let block = web3.eth.defaultBlock;
         let number = web3.eth.blockNumber;
         let listAccount = web3.eth.accounts;
